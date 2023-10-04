@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        img{
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+    <head>
+        <title>Isaias Oliveira</title>
+
+    </head>
+    <body>
+        <h1>Prog. Web</h1>
+        <p style="text-align: center;"></p> Aula de Programção de ambiente WEB Edição de html Quarta Feira.</p>
+        <img src="img_girl.jpg" width="500" height="600">
+        <p></p>
+        <img src="img_girl1.jpg" width="288" height="288">
+    </body>   
+</html>
