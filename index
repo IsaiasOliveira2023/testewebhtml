@@ -1,20 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <style>
-        img{
-            margin: 0 auto;
-            display: block;
-        }
-    </style>
-    <head>
-        <title>Isaias Oliveira</title>
-
-    </head>
-    <body>
-        <h1>Prog. Web</h1>
-        <p style="text-align: center;"></p> Aula de Programção de ambiente WEB Edição de html Quarta Feira.</p>
-        <img src="img_girl.jpg" width="500" height="600">
-        <p></p>
-        <img src="img_girl1.jpg" width="288" height="288">
-    </body>   
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <button id="downloadButton">Download</button>
+    <div id="countdown"></div>
+</body>
+<script src="script.js"></script>
 </html>
+#countdown {
+    font-size: 24px;
+}
+document.getElementById("downloadButton").addEventListener("click", function() {
+    var countdown = 5; // Defina o tempo de contagem regressiva em segundos
+
+    var countdownInterval = setInterval(function() {
+        if (countdown <= 0) {
+            clearInterval(countdownInterval);
+            startDownload();
+        } else {
+            document.getElementById("countdown").innerText = "Iniciando o download em " + countdown + " segundos...";
+            countdown--;
+        }
+    }, 1000);
+});
+
+function startDownload() {
+    // Substitua o URL abaixo pelo link do arquivo que você deseja baixar
+    var downloadUrl = "seu_link_de_download_aqui";
+
+    // Crie um elemento de âncora oculto para iniciar o download
+    var downloadLink = document.createElement("a");
+    downloadLink.href = downloadUrl;
+    downloadLink.download = "nome_do_arquivo"; // Nome do arquivo a ser baixado
+    downloadLink.style.display = "none";
+
+    document.body.appendChild(downloadLink);
+
+    downloadLink.click();
+
+    document.body.removeChild(downloadLink);
+}
