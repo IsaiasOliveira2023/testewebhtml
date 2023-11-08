@@ -1,0 +1,16 @@
+#countdown {
+    font-size: 24px;
+}
+document.getElementById("downloadButton").addEventListener("click", function() {
+    var countdown = 5; // Defina o tempo de contagem regressiva em segundos
+
+    var countdownInterval = setInterval(function() {
+        if (countdown <= 0) {
+            clearInterval(countdownInterval);
+            startDownload();
+        } else {
+            document.getElementById("countdown").innerText = "Iniciando o download em " + countdown + " segundos...";
+            countdown--;
+        }
+    }, 1000);
+});
